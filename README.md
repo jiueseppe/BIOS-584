@@ -1,6 +1,0 @@
-# BIOS-584: Python Programming (Non-BIOS)
-
-Welcome to BIOS-584. 
-This course provides a pragmatic and hands-on introduction to the Python programming language, with a focus on practical applications and projects, rather than theoretical topics. 
-
-We cover virtual environment setup, Jupyter Notebook, data types, control flow, object-oriented programming, and graphical user interface-driven applications. Students will learn to work with packages, data structures, and tools for data science. The examples and problems used in this course are drawn from diverse areas such as simple graphics creation, image manipulation, electronic health records, and electrophysiological sensor data.
