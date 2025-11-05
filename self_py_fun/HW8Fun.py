@@ -54,7 +54,7 @@ def produce_trunc_mean_cov(input_signal, input_type, E_val):
 ##Function to plot sample mean=========================================================================
 def plot_trunc_mean(
         eeg_tar_mean, eeg_ntar_mean, subject_name, time_index, E_val, electrode_name_ls,
-        y_limit=np.array([-5, 8]), fig_size=(12, 12)
+        outdir, y_limit=np.array([-5, 8]), fig_size=(12, 12)
 ):
     r"""
     :param eeg_tar_mean:
@@ -90,6 +90,8 @@ def plot_trunc_mean(
     axes[0].legend(loc='upper right')
     fig.suptitle(f"{subject_name} Target v. Non-Target Sample Means", fontsize=14, y=0.98)
     plt.tight_layout()
+    fig.savefig(os.path.join(outdir, "Mean.png"), dpi=200, bbox_inches="tight")
+    plt.close(fig)
 
 
 ##Function to plot sample covariance=========================================================================
@@ -97,7 +99,7 @@ def plot_trunc_mean(
 # e-val = # electrodes
 
 def plot_trunc_cov(
-        eeg_cov, cov_type, time_index, subject_name, E_val, electrode_name_ls, fig_size=(14, 12)  #
+        eeg_cov, cov_type, time_index, subject_name, E_val, electrode_name_ls, outdir, fig_size=(14, 12)  #
 ):
     fig, axes = plt.subplots(4, 4, figsize=fig_size)
     axes = axes.ravel()  # flattens 2d grid (4x4) into 1d list of 16 plots
@@ -131,3 +133,10 @@ def plot_trunc_cov(
 
     fig.suptitle(f"{subject_name} — {cov_type} Sample Covariance", fontsize=14, y=0.98)
     plt.tight_layout()
+    name_map = {
+        "Target": "Covariance_Target.png",
+        "Non-Target": "Covariance_Non-Target.png",
+        "All": "Covariance_All.png",
+    }
+    fig.savefig(os.path.join(outdir, name_map[cov_type]), dpi=200, bbox_inches="tight")
+    plt.close(fig)

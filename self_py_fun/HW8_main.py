@@ -60,34 +60,31 @@ tar_mean, ntar_mean, tar_cov, ntar_cov, all_cov = produce_trunc_mean_cov(
     eeg_trunc_signal, eeg_trunc_type, electrode_num
 )
 
-#Mean (target vs. non-target) - call plot_trunc_mean
+#Plot
 plot_trunc_mean(
     tar_mean, ntar_mean,
     subject_name, time_index,
-    electrode_num, electrode_name_ls)
-plt.savefig(os.path.join(new_dir, "Mean.png"), dpi=200, bbox_inches="tight")
-plt.close()
+    electrode_num, electrode_name_ls,
+    outdir=new_dir
+)
 
-#Covariance (Target) - call plot_trunc_cov for target covariance only
 plot_trunc_cov(
     tar_cov, "Target",
     time_index, subject_name,
-    electrode_num, electrode_name_ls)
-plt.savefig(os.path.join(new_dir, "Covariance_Target.png"), dpi=200, bbox_inches="tight")
-plt.close()
+    electrode_num, electrode_name_ls,
+    outdir=new_dir
+)
 
-#Covariance (non-target) - call plot_trunc_cov for non-target covariance only
 plot_trunc_cov(
-    ntar_cov, "Non-target",
+    ntar_cov, "Non-Target",  # keep the same capitalization used in the filename map
     time_index, subject_name,
-    electrode_num, electrode_name_ls)
-plt.savefig(os.path.join(new_dir, "Covariance_Non-Target.png"), dpi=200, bbox_inches="tight")
-plt.close()
+    electrode_num, electrode_name_ls,
+    outdir=new_dir
+)
 
-#Covariance (ALL targets) - call plot_trunc_cov for all covariance only
 plot_trunc_cov(
     all_cov, "All",
     time_index, subject_name,
-    electrode_num, electrode_name_ls)
-plt.savefig(os.path.join(new_dir, "Covariance_All.png"), dpi=200, bbox_inches="tight")
-plt.close()
+    electrode_num, electrode_name_ls,
+    outdir=new_dir
+)
