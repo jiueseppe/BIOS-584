@@ -4,23 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd331f0e-6c41-4c6a-9907-dd8dd3f39b5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BIOS-584.iml" beforeDir="false" />
+    <list default="true" id="bd331f0e-6c41-4c6a-9907-dd8dd3f39b5f" name="Changes" comment=",">
+      <change afterPath="$PROJECT_DIR$/self_py_fun/HW8Fun.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/self_py_fun/HW8_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/Debug_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW7.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/HW7.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW8.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/HW8.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz3.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week_08_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/week_08_main_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/self_py_fun/HW8Fun.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/self_py_fun/HW8_main.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -30,18 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.HW1.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Debug_example.executor": "Run",
+    "Python.HW1.executor": "Run",
+    "Python.HW8Fun.executor": "Run",
+    "Python.HW8_main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="HW1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="BIOS_584" />
@@ -56,7 +71,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\josep\Documents\GitHub\BIOS_584\HW1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HW1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,7 +96,20 @@
       <option name="presentableId" value="Default" />
       <updated>1756920451683</updated>
     </task>
+    <task id="LOCAL-00001" summary=",">
+      <option name="closed" value="true" />
+      <created>1760105346900</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760105346900</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="," />
+    <option name="LAST_COMMIT_MESSAGE" value="," />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

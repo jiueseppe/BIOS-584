@@ -20,7 +20,7 @@ complete_trunc_data_name = '{}_{}_Truncated_Data_{}_{}'.format(subject_name, ses
 complete_trunc_data_dir = '{}/{}.mat'.format(parent_data_dir, complete_trunc_data_name)
 eeg_trunc_obj = sio.loadmat(complete_trunc_data_dir)
 
-print(eeg_trunc_obj.keys())
+print(eeg_trunc_obj.keys())s
 eeg_trunc_signal = eeg_trunc_obj['Signal']
 print(eeg_trunc_signal.shape) # 3420, 400
 eeg_trunc_type = eeg_trunc_obj['Type']
