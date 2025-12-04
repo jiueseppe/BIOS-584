@@ -26,7 +26,7 @@ bp_low = 0.5
 bp_upp = 6
 electrode_num = 16
 # Change the following directory to your own one.
-parent_dir = r'C:\Users\josep\Documents\GitHub\BIOS_584'
+parent_dir = '/Users/tma33/Library/CloudStorage/OneDrive-EmoryUniversity/Emory/Rollins SPH/2025/BIOS-584/python_proj'
 parent_data_dir = '{}/data'.format(parent_dir)
 time_index = np.linspace(0, 800, 25)
 electrode_name_ls = ['F3', 'Fz', 'F4', 'T7', 'C3', 'Cz', 'C4', 'T8', 'CP3', 'CP4', 'P3', 'Pz', 'P4', 'PO7', 'PO8', 'Oz']
@@ -59,17 +59,8 @@ eeg_trn_type = np.squeeze(eeg_trn_type, axis=1)
 # eeg_frt_signal and eeg_frt_type
 # Write your own code below:
 
-frt_data_name = '{}_001_BCI_FRT_Truncated_Data_{}_{}'.format(subject_name, bp_low, bp_upp)
-frt_data_dir = '{}/{}.mat'.format(parent_data_dir, frt_data_name)
-eeg_frt_obj = sio.loadmat(frt_data_dir)
-print(eeg_frt_obj.keys())
 
-eeg_frt_signal = eeg_frt_obj['Signal']
-print(eeg_frt_signal.shape)
 
-eeg_frt_type = eeg_frt_obj['Type']
-print(eeg_frt_type.shape)
-eeg_frt_type = np.squeeze(eeg_frt_type, axis=1) #need (N, shape
 
 # You have completed the exploratory data analysis in HW7 and HW8.
 # The dataset has been carefully reviewed by Dr. Jane E. Huggins,
@@ -84,23 +75,9 @@ eeg_frt_type = np.squeeze(eeg_frt_type, axis=1) #need (N, shape
 # except for LogisticRegression: set max_iter=1000
 # Write your own code below:
 
-x_trn = eeg_trn_signal
-y_trn = eeg_trn_type
 
-x_frt = eeg_frt_signal
-y_frt = eeg_frt_type
 
-#LOGISTIC REG
-logistic_model = LR(max_iter=1000)
-logistic_model.fit(x_trn, y_trn)
 
-#LDA
-lda_model = LDA()
-lda_model.fit(x_trn, y_trn)
-
-#Support vector Machine
-svm_model = SVC(probability=True) # so can predict prob later
-svm_model.fit(x_trn, y_trn)
 
 # Step 3: Evaluate model performance on both TRN and FRT files
 # Step 3.1: Prediction accuracy on TRN files
@@ -110,25 +87,8 @@ svm_model.fit(x_trn, y_trn)
 # denoted as logistic_y_trn, lda_y_trn, and svm_y_trn.
 # Write your own code below:
 
-#call .predict_proba(), take 2nd column, reshape
-
-#Logisitc
-logistic_probs_trn = logistic_model.predict_proba(x_trn)   # shape : (N_trn, 2)
-logistic_y_trn_1d = logistic_probs_trn[:, 1]               # pick 2nd column
-logistic_y_trn = logistic_y_trn_1d[:, np.newaxis]          #to turn shape (N,) -> (N,1)
-
-lda_probs_trn = lda_model.predict_proba(x_trn)
-lda_y_trn_1d = lda_probs_trn[:, 1]
-lda_y_trn = lda_y_trn_1d[:, np.newaxis]
 
 
-svm_probs_trn = svm_model.predict_proba(x_trn)
-svm_y_trn_1d = svm_probs_trn[:, 1]
-svm_y_trn = svm_y_trn_1d[:, np.newaxis]
-
-print(' logistic_y_trn shape:', logistic_y_trn.shape)
-print('lda_y_trn shape:', lda_y_trn.shape)
-print('svm_y_trn shape:', svm_y_trn.shape)
 
 
 # Step 3.2: Prediction accuracy on FRT files
@@ -136,29 +96,14 @@ print('svm_y_trn shape:', svm_y_trn.shape)
 # denoted as logistic_y_frt, lda_y_frt, and svm_y_frt.
 # Write your own code below:
 
-#Logistic
-logistic_probs_frt = logistic_model.predict_proba(x_frt)
-logistic_y_frt_1d = logistic_probs_frt[:, 1]
-logistic_y_frt = logistic_y_frt_1d[:, np.newaxis]
 
-#LDA
-lda_probs_frt = lda_model.predict_proba(x_frt)
-lda_y_frt_1d = lda_probs_frt[:, 1]
-lda_y_frt = lda_y_frt_1d[:, np.newaxis]
 
-#SVM
-svm_probs_frt = svm_model.predict_proba(x_frt)
-svm_y_frt_1d = svm_probs_frt[:, 1]
-svm_y_frt = svm_y_frt_1d[:, np.newaxis]
 
-print('logistic_y_frt shape:', logistic_y_frt.shape)
-print(' lda_y_frt shape:', lda_y_frt.shape)
-print(' svm_y_frt shape:', svm_y_frt.shape)
 
 # Step 4: Convert binary classification probability to character-level accuracy
 # This involves advanced data manipulation, so you do not need to write any new code.
 # Please run the following code to view the final results.
-
+'''
 eeg_trn_code = eeg_trn_obj['Code']
 eeg_frt_code = eeg_frt_obj['Code']
 char_frt = convert_raw_char_to_alphanumeric_stype(eeg_frt_obj['Text'])
@@ -224,14 +169,14 @@ print(list(char_frt)) # This is the true spelling characters for training set!
 svm_frt_accuracy = np.mean(svm_letter_mat_frt == np.array(list(char_frt))[:, np.newaxis], axis=0)
 
 
-print('logistic TRN accuracy', logistic_trn_accuracy)
-print('LDA TRN accuracy', lda_trn_accuracy)
-print('SVM TRN accuracy', svm_trn_accuracy)
+print(logistic_trn_accuracy)
+print(lda_trn_accuracy)
+print(svm_trn_accuracy)
 
-print('logistic FRT accuracy', logistic_frt_accuracy)
-print('LDA FRT accuracy', lda_frt_accuracy)
-print('SVM FRT accuracy', svm_frt_accuracy)
-
+print(logistic_frt_accuracy)
+print(lda_frt_accuracy)
+print(svm_frt_accuracy)
+'''
 
 # Remember to answer two questions below:
 
@@ -245,13 +190,5 @@ print('SVM FRT accuracy', svm_frt_accuracy)
 # svm_trn_accuracy = np.mean(svm_letter_mat_trn == np.array(list(char_trn))[:, np.newaxis], axis=0)
 # svm_frt_accuracy = np.mean(svm_letter_mat_frt == np.array(list(char_frt))[:, np.newaxis], axis=0)
 
-
-#########ANSWER:
-### Each of the six rows takes the matrix of predicted letters from a given model (trn or frt) and compares it to the true character string. The comparison creates a matrix of true/False values for whether each predicted letter matches the true letter, and then the np.mean function then averages those over letters to get the proportion of correctly predicted characters in each sequence. thus, these rows compute the sequence-level character accuracy
-
 # Step 5: Summary
 # Which method performs the best? Why?
-
-###########ANSWER:
-##  With the training data, the SVM model has the highest accuracy; its accuracy is slightly higher than logistic regression and LDA during the early sequences (95% vs. 84% and 79%, respectivly) and then reaches 100% like the others.
-## With the testing data, LDA and SVM have comparable accuracies across the four sequences, but SVM achieves 100% accuracy on the last sequence, whereas logistic and LDA are slightly below 1 by the end. Thus overall, SVM performs the best
